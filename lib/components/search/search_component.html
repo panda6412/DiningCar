@@ -1,0 +1,66 @@
+<div>
+    <span><img src="http://cdn.mysitemyway.com/etc-mysitemyway/icons/legacy-previews/icons-256/high-resolution-dark-blue-denim-jeans-icons-food-beverage/057605-high-resolution-dark-blue-denim-jeans-icon-food-beverage-drink-coffee-tea-sc44.png"
+        class="img-rounded" width="128px" height="128px"></span>
+    <div style="width:40px;">
+        <span class="title">Dining Car</span>
+        <hr>
+        <h5>Easy find your food .</h5>
+    </div>
+
+</div>
+
+<hr>
+<div>
+    <!--Fliter from station-->
+    <span>Station:</span>
+    <select class="selectpicker" [(ngModel)]="temp_station" (ngModelChange)="onChangeStation()">
+        <option>All</option>
+        <option *ngFor="let station of stations" [value]="station">
+            {{station}}
+        </option>
+    </select>
+
+
+
+
+
+    <!--Fliter from sale here-->
+    <span style="margin-left:10px">Sale:</span>
+    <select class="selectpicker" multiple [(ngModel)]="temp_sale">
+
+        <option *ngFor="let sale of spiltString()" [ngValue]="sale" (select)="onSelectSale(sale)" (click)="onCheck(sale)">
+            {{sale}}
+        </option>
+    </select>
+
+
+
+
+
+
+    <div *ngFor="let sale of salesSet">
+        <label>{{sale}}</label>
+        <input type="checkbox" (click)="onCheck(sale)"/>
+    </div>
+
+</div>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Station</th>
+            <th>Sales</th>
+            <th>Location</th>
+            <th>Opening_hours</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let item of items">
+            <td>{{item['station']}}</td>
+            <td>{{item['sales']}}</td>
+            <td>{{item['location']}}</td>
+            <td>{{item['opening_hours']}}</td>
+        </tr>
+    </tbody>
+
+</table>

@@ -1,0 +1,5 @@
+concurrency: 2
+platforms:
+- chrome
+- vm
+pub_serve: 8081

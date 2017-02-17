@@ -1,0 +1,17 @@
+:host {
+    /* This is equivalent of the 'body' selector of a page. */
+}
+
+.blue {
+  background-color: #2196F3;
+  color: white;
+}
+
+.title{
+    font-size: 36px;
+    font-weight: 500 ;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 20px;
+    display:inline-block;
+}
